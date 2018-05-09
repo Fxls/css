@@ -1,10 +1,10 @@
 # 利用CSS变量实现令人震惊的悬停效果
 
-## 怎样才能达到这个效果，使我们的网站脱颖而出呢？其实，它并不像你想象的那么难！
+### 怎样才能达到这个效果，使我们的网站脱颖而出呢？其实，它并不像你想象的那么难！
 
 ## 追踪位置
     我们要做的第一件事就是获取到鼠标的位置。
-### document.querySelector('.button').onmousemove = (e) => {
+    document.querySelector('.button').onmousemove = (e) => {
 
      const x = e.pageX - e.target.offsetLeft
      const y = e.pageY - e.target.offsetTop
@@ -17,7 +17,7 @@
     1、选择元素，等待，直到用户将鼠标移过它；
     2、计算相对于元素的位置；
     3、将坐标存在CSS的变量中。
-### 是的，仅仅9行代码就让你能获知用户放置鼠标的位置，通过这个信息你能达到意想不到的效果，但是我们还是先来完成CSS部分的代码。
+#### 是的，仅仅9行代码就让你能获知用户放置鼠标的位置，通过这个信息你能达到意想不到的效果，但是我们还是先来完成CSS部分的代码。
 
 ## 动画渐变
     我们先将坐标存储在CSS变量中，以便能够随时使用它们。
@@ -39,7 +39,7 @@
         position: relative;
       }
 
-      &::before {
+      .button::before {
         --size: 0;  
 
         content: '';
@@ -53,7 +53,7 @@
         transition: width .2s ease, height .2s ease;
       }
 
-      &:hover::before {
+      .button:hover::before {
         --size: 400px;
       }
     }
